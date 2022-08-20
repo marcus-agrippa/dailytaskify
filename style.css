@@ -43,7 +43,16 @@ h1 {
 }
 
 li {
+  position: relative;
   list-style: none;
+}
+
+.fa-xmark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-top: 25px;
+  padding-right: 25px;
 }
 
 form {
@@ -81,14 +90,20 @@ input:focus {
 .tasks li {
   border-top: 10px solid var(--border-color);
   color: var(--font-color);
+  overflow: hidden;
   cursor: pointer;
   font-size: 1.4rem;
   padding: 1rem 2rem;
 }
 
+.tasks li i {
+  display: none;
+}
+
 .tasks li.completed {
   color: var(--completed-color);
   text-decoration: line-through;
+  overflow: hidden;
 }
 
 small {
@@ -173,4 +188,17 @@ input:checked + .slider:before {
   form {
     width: 85%;
   }
+
+  .tasks li i {
+    display: block;
+  }
+
+  .switch {
+    margin: 4rem;
+  }
+
+  small {
+    display: none;
+  }
+
 }
